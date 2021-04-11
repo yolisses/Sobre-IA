@@ -77,3 +77,25 @@ h4 {
 #c1{
   animation-direction: alternate;
 }
+
+.pseudocode{
+  border: 1px solid gray;
+  padding: 5px;
+  font-family: 1.0em monospace;
+}
+
+.pseudocode>.io{
+  color: rgb(0, 123, 172);
+}
+
+.pseudocode>.cond{
+  color: rgb(163, 52, 0);
+}
+
+.pseudocode>.op{
+  color: rgb(85, 0, 182);
+}
+
+.pseudocode>.num{
+  color: rgb(0, 182, 9);
+}
