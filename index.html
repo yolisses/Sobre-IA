@@ -1,208 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/index.css" />
-  </head>
 
-  <body>
-    <div class="container">
-      <div>
-        <h1>Sobre IA</h1>
-        <h3 class="subtitle">
-          Algumas coisas nas quais venho pensando sobre emergência do pensamento
-        </h3>
-        <p>
-          Hoje em dia é bem comum chamar de inteligência artificial os
-          algoritmos que se otimizam possibilitando coisas incríveis, como gerar
-          uma canção inteira com a voz de alguém a partir de apenas 5 segundos
-          de gravação. Mas alguns consideram o termo inteligência artificial um
-          tanto presunçoso, porque inteligente é só aquele ou aquilo que pensa.
-          Dessa forma, uma calculadora pode entregar respostas certas para
-          operações complexas, mas certamente é menos inteligente que uma
-          criança que não saiba somar.
-        </p>
-        <p>
-          Ok, mas como saberemos se um sistema pensa ou não? O básico é
-          entendendo o sistema. Conhecendo as partes internas e o porque das
-          coisas podemos fazer alegações racionais. Por exemplo, não precisamos
-          conhecer todos as formigas do mundo para afirmar que é praticamente
-          impossível uma delas escrever um livro. Isso se baseia não só no que
-          fazem ou não, mas em o que é necessário para que aconteça. Nesse caso,
-          a formiga precisa de pensamento abstrato de alto nível e algum sistema
-          de escrita, o sistema de escrita precisa de seres que já o entendam ou
-          que o tenham como ideia, e assim por diante, uma longa lista de
-          requisitos que diminuem a chance de que aconteça
-        </p>
-        <p>
-          Então para tirar conclusões racionais sobre o que chamam de
-          inteligência artificial temos que entender o básico.
-        </p>
-        <h2>Básico (mais básico impossível) de machine learning</h2>
-        <p>
-          Imagine um problema banal como calcular o total a pagar comprando
-          laranjas a 3 reais o quilo. Somos capazes de resolvê-lo sabendo o
-          número de laranjas. Pegamos esse número, fazemos um procedimento
-          matemático e temos a resposta. Simples. Mas imagine que alguém lhe
-          pergunte várias vezes quanto deve pagar levando n laranjas, e você não
-          saiba o quanto elas pesam no total.
-        </p>
-        <p>
-          Você pode fazer uma aproximações. E o que há de interessante é que se
-          alguém lhe avisar se você errou por falta ou por excesso, você pode
-          ajustar as próximas respostas até praticamente acertar todas as vezes.
-        </p>
-        <p>
-          Os computadores também podem fazer isso, e sem serem inteligentes. Já
-          que são basicamente calculadoras com comandos abrangentes, você pode
-          escrever um código como o seguinte:
-        </p>
-        <p>
-          receba numero_de_laranjas <br />
-          envie numero_de_laranjas * valor_salvo <br />
-          receba errou_por_excesso <br />
-          se (errou_por_excesso){ <br />
-          diminua valor_salvo em 0.01 <br />
-          } senão { <br />
-          aumente valor_salvo em 0.01 <br />
-          } <br />
-        </p>
-        <p>
-          E depois de executar várias vezes, recebendo o dados de entrada e uma
-          medida sobre o erro, o resultado vai ficar aproximadamente certo.
-        </p>
-        <h3>Aumentando o nível</h3>
-        <p>
-          Agora queremos um algoritmo semelhante mas para atirar corretamente
-          com um arco e flecha em um alvo. A máquina recebe a posição do alvo,
-          retorna a direção para onde apontar e quanta força usar no arco, e
-          depois disso recebe a distância que a flecha ficou do alvo (tudo isso
-          em forma de valores numéricos)
-        </p>
-        <p>
-          Com certeza isso não pode ser resolvido apenas multiplicando por um
-          número como no exemplo anterior. Temos que usar mais valores e mais
-          operações matemáticas.
-        </p>
-        <p>
-          A forma mais comum hoje em dia é usar as chamadas redes neurais, que
-          são modelos matemáticos baseados nos neurônios de seres vivos reais.
-          Neles existem neurônios (oh!) com entrada(s) e uma saída de valores.
-          As entradas são multiplicadas por valores salvos na memória (chamados
-          pesos), somadas todas juntas e o resultado passa por uma função
-          matemática.
-        </p>
-        <p>
-          Essa função, chamada de função de ativação, tem como objetivo
-          possibilitar resultados menos lineares. O que costuma ser mais
-          coerente com a realidade, por exemplo, recarregar de 0 a 50% de uma
-          bateria demora mais do que recarregar de 50% a 100%, então a carga não
-          cresce linearmente com o tempo.
-        </p>
-        <p>
-          Ligando-se vários neurônios e usando muitas vezes o processo de
-          ajustar valores pode-se chegar em resultados bem interessantes, como
-          os carros autônomos.
-        </p>
-        <h3>Importante</h3>
-        <p>
-          Isso que eu falei é só o começo. Normalmente usa-se várias outras
-          coisas para que funcione, por exemplo:
-        </p>
-        <ul>
-          <li>
-            Um valor chamado bias que vai na soma junto com as entradas. Que
-            normalmente ajuda na adaptabilidade.
-          </li>
-          <li>
-            Backpropagation, o algoritmo padrão de atualizar os valores, que
-            leva em conta a influência percentual de cada neurônio na taxa de
-            erro obtida.
-          </li>
-          <li>
-            Várias funções de ativação como ReLu, tangente hiperbólica e
-            sigmoide.
-          </li>
-          <li>
-            Normalização, que faz as entradas terem pouca variação absoluta
-            (números entre 0 e 1) evitando problemas de importância dos dados.
-            Por exemplo, uma rede neural para vendas poderia ficar perdida com
-            entradas como {preço:1.99, numero_de_compradores:100000}
-          </li>
-          <li>
-            Convolução, um processo muito usado para processar imagens, em que
-            são calculados juntas entradas com posições próximas
-          </li>
-        </ul>
-        <p>E todo dia os métodos ficam mais refinados...</p>
-        <h2>Esses algoritmos pensam?</h2>
-        <p>
-          Posso afirmar com certeza que grande parte não. É o caso das redes
-          neurais feedfoward, em que os neurônios estão organizados para
-          processar unidirecionalmente e sem memórias a não ser os valores
-          salvos como pesos e biases. Esses algoritmos já são capazes de coisas
-          bem interessantes como reconhecimento de imagens, mas se uma dessas
-          redes tivesse um pensamento, não se lembraria na próxima vez que
-          pensasse, o que limita e muito o quanto pensaria.
-        </p>
-        <p>
-          De um ponto de vista filosófico, uma parte poderia pensar exatamente
-          igual à você, se os dados passados e a maneira de processar levasse a
-          uma simulação perfeita do nosso universo, mas sabemos que isso não vai
-          acontecer.
-        </p>
-        <p>
-          Candidatos melhores para algoritmos que pensam são aqueles em que o
-          próximo resultado depende do anterior, chamados recorrentes. Nesses a
-          saída se conecta como entrada para a próxima iteração. Conseguem assim
-          passar alguma mensagem para "si mesmos" de um momento futuro, que
-          poderia evoluir em pensar de forma completa. Mas no caso as iterações
-          a que me refiro são do método de avaliar uma entrada. Por exemplo, no
-          processamento de um texto (cenário típico de redes neurais
-          recorrentes) em vez de se passar dezenas ou mesmo centenas de palavras
-          todas de uma vez, o que requer muitos recursos e é inviável de treinar
-          para um número significativo de situações, pode-se passar uma palavra
-          por vez. Essas são as iterações.
-        </p>
-        <p>
-          Mas é improvável que uma rede assim conseguisse isolar de forma
-          eficiente vários níveis de pensamentos com prazos diferentes. Quero
-          dizer, coisas como "A Teoria da Evolução das Espécies por Meio da
-          Seleção Natural" não surgiram no curto prazo. Coisas assim, provas da
-          capacidade de pensar, em que se parte de premissas e chega-se a
-          conclusões coerentes, precisam de memórias eficientes, que permitam
-          pausas sem apagá-las completamente.
-        </p>
-        <p>
-          A recorrência por si só não faz com que registros anteriores se
-          perpetuem plenamente e também seria um desperdício de recursos ter
-          todas as memórias sendo repassadas ao mesmo tempo
-        </p>
-        <p>
-          Essa é uma das grandes questões a serem resolvidas, como fazer as
-          máquinas pensarem através de conhecimento, de algo lembrado. Por
-          enquanto os seres humanos estão em vantagem nesse quesito, mas irônica
-          e justamente por que não sabemos como. Uma demonstração, leia essa
-          palavra: Chocolate.
-        </p>
-        <p>
-          Você não precisou de muito esforço para manter essa palavra com você
-          até agora, então provavelmente não precisa passá-la junto a outras
-          informações a cada segundo. Você simplesmente lembra do significado.
-          Como a palavra "chocolate" chegou ao seu pensamento de forma tão
-          eficiente?
-        </p>
-        <p>
-          Tenho algumas ideias a respeito, mas até agora se provaram
-          infrutíferas. Caso alguém tenha sucesso em criar um programa que se
-          lembre do que passou e pense usando isso em vez de instintos simples
-          de entrada e saída otimizadas, teremos muita coisa em jogo, porque com
-          certeza existirá uma Inteligência Artificial.
-        </p>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <canvas id="c1"></canvas>
+  <canvas id="c2"></canvas>
+  <div class="container">
+    <div>
+      <h1>Sobre IA</h1>
+      <h3 class="subtitle">
+        Algumas coisas nas quais venho pensando sobre emergência do pensamento
+      </h3>
+      <p>
+        Hoje em dia é bem comum chamar de inteligência artificial os
+        algoritmos que se otimizam possibilitando coisas incríveis, como gerar
+        uma canção inteira com a voz de alguém a partir de apenas 5 segundos
+        de gravação. Mas alguns consideram o termo inteligência artificial um
+        tanto presunçoso, porque inteligente é só aquele ou aquilo que pensa.
+        Dessa forma, uma calculadora pode entregar respostas certas para
+        operações complexas, mas certamente é menos inteligente que uma
+        criança que não saiba somar.
+      </p>
+      <p>
+        Ok, mas como saberemos se um sistema pensa ou não? O básico é
+        entendendo o sistema. Conhecendo as partes internas e o porque das
+        coisas podemos fazer alegações racionais. Por exemplo, não precisamos
+        conhecer todos as formigas do mundo para afirmar que é praticamente
+        impossível uma delas escrever um livro. Isso se baseia não só no que
+        fazem ou não, mas em o que é necessário para que aconteça. Nesse caso,
+        a formiga precisa de pensamento abstrato de alto nível e algum sistema
+        de escrita, o sistema de escrita precisa de seres que já o entendam ou
+        que o tenham como ideia, e assim por diante, uma longa lista de
+        requisitos que diminuem a chance de que aconteça
+      </p>
+      <p>
+        Então para tirar conclusões racionais sobre o que chamam de
+        inteligência artificial temos que entender o básico.
+      </p>
+      <h2>Básico (mais básico impossível) de machine learning</h2>
+      <p>
+        Imagine um problema banal como calcular o total a pagar comprando
+        laranjas a 3 reais o quilo. Somos capazes de resolvê-lo sabendo o
+        número de laranjas. Pegamos esse número, fazemos um procedimento
+        matemático e temos a resposta. Simples. Mas imagine que alguém lhe
+        pergunte várias vezes quanto deve pagar levando n laranjas, e você não
+        saiba o quanto elas pesam no total.
+      </p>
+      <p>
+        Você pode fazer uma aproximações. E o que há de interessante é que se
+        alguém lhe avisar se você errou por falta ou por excesso, você pode
+        ajustar as próximas respostas até praticamente acertar todas as vezes.
+      </p>
+      <p>
+        Os computadores também podem fazer isso, e sem serem inteligentes. Já
+        que são basicamente calculadoras com comandos abrangentes, você pode
+        escrever um código como o seguinte:
+      </p>
+      <p>
+        receba numero_de_laranjas <br />
+        envie numero_de_laranjas * valor_salvo <br />
+        receba errou_por_excesso <br />
+        se (errou_por_excesso){ <br />
+        diminua valor_salvo em 0.01 <br />
+        } senão { <br />
+        aumente valor_salvo em 0.01 <br />
+        } <br />
+      </p>
+      <p>
+        E depois de executar várias vezes, recebendo o dados de entrada e uma
+        medida sobre o erro, o resultado vai ficar aproximadamente certo.
+      </p>
+      <h3>Aumentando o nível</h3>
+      <p>
+        Agora queremos um algoritmo semelhante mas para atirar corretamente
+        com um arco e flecha em um alvo. A máquina recebe a posição do alvo,
+        retorna a direção para onde apontar e quanta força usar no arco, e
+        depois disso recebe a distância que a flecha ficou do alvo (tudo isso
+        em forma de valores numéricos)
+      </p>
+      <p>
+        Com certeza isso não pode ser resolvido apenas multiplicando por um
+        número como no exemplo anterior. Temos que usar mais valores e mais
+        operações matemáticas.
+      </p>
+      <p>
+        A forma mais comum hoje em dia é usar as chamadas redes neurais, que
+        são modelos matemáticos baseados nos neurônios de seres vivos reais.
+        Neles existem neurônios (oh!) com entrada(s) e uma saída de valores.
+        As entradas são multiplicadas por valores salvos na memória (chamados
+        pesos), somadas todas juntas e o resultado passa por uma função
+        matemática.
+      </p>
+      <p>
+        Essa função, chamada de função de ativação, tem como objetivo
+        possibilitar resultados menos lineares. O que costuma ser mais
+        coerente com a realidade, por exemplo, recarregar de 0 a 50% de uma
+        bateria demora mais do que recarregar de 50% a 100%, então a carga não
+        cresce linearmente com o tempo.
+      </p>
+      <p>
+        Ligando-se vários neurônios e usando muitas vezes o processo de
+        ajustar valores pode-se chegar em resultados bem interessantes, como
+        os carros autônomos.
+      </p>
+      <h3>Importante</h3>
+      <p>
+        Isso que eu falei é só o começo. Normalmente usa-se várias outras
+        coisas para que funcione, por exemplo:
+      </p>
+      <ul>
+        <li>
+          Um valor chamado bias que vai na soma junto com as entradas. Que
+          normalmente ajuda na adaptabilidade.
+        </li>
+        <li>
+          Backpropagation, o algoritmo padrão de atualizar os valores, que
+          leva em conta a influência percentual de cada neurônio na taxa de
+          erro obtida.
+        </li>
+        <li>
+          Várias funções de ativação como ReLu, tangente hiperbólica e
+          sigmoide.
+        </li>
+        <li>
+          Normalização, que faz as entradas terem pouca variação absoluta
+          (números entre 0 e 1) evitando problemas de importância dos dados.
+          Por exemplo, uma rede neural para vendas poderia ficar perdida com
+          entradas como {preço:1.99, numero_de_compradores:100000}
+        </li>
+        <li>
+          Convolução, um processo muito usado para processar imagens, em que
+          são calculados juntas entradas com posições próximas
+        </li>
+      </ul>
+      <p>E todo dia os métodos ficam mais refinados...</p>
+      <h2>Esses algoritmos pensam?</h2>
+      <p>
+        Posso afirmar com certeza que grande parte não. É o caso das redes
+        neurais feedfoward, em que os neurônios estão organizados para
+        processar unidirecionalmente e sem memórias a não ser os valores
+        salvos como pesos e biases. Esses algoritmos já são capazes de coisas
+        bem interessantes como reconhecimento de imagens, mas se uma dessas
+        redes tivesse um pensamento, não se lembraria na próxima vez que
+        pensasse, o que limita e muito o quanto pensaria.
+      </p>
+      <p>
+        De um ponto de vista filosófico, uma parte poderia pensar exatamente
+        igual à você, se os dados passados e a maneira de processar levasse a
+        uma simulação perfeita do nosso universo, mas sabemos que isso não vai
+        acontecer.
+      </p>
+      <p>
+        Candidatos melhores para algoritmos que pensam são aqueles em que o
+        próximo resultado depende do anterior, chamados recorrentes. Nesses a
+        saída se conecta como entrada para a próxima iteração. Conseguem assim
+        passar alguma mensagem para "si mesmos" de um momento futuro, que
+        poderia evoluir em pensar de forma completa. Mas no caso as iterações
+        a que me refiro são do método de avaliar uma entrada. Por exemplo, no
+        processamento de um texto (cenário típico de redes neurais
+        recorrentes) em vez de se passar dezenas ou mesmo centenas de palavras
+        todas de uma vez, o que requer muitos recursos e é inviável de treinar
+        para um número significativo de situações, pode-se passar uma palavra
+        por vez. Essas são as iterações.
+      </p>
+      <p>
+        Mas é improvável que uma rede assim conseguisse isolar de forma
+        eficiente vários níveis de pensamentos com prazos diferentes. Quero
+        dizer, coisas como "A Teoria da Evolução das Espécies por Meio da
+        Seleção Natural" não surgiram no curto prazo. Coisas assim, provas da
+        capacidade de pensar, em que se parte de premissas e chega-se a
+        conclusões coerentes, precisam de memórias eficientes, que permitam
+        pausas sem apagá-las completamente.
+      </p>
+      <p>
+        A recorrência por si só não faz com que registros anteriores se
+        perpetuem plenamente e também seria um desperdício de recursos ter
+        todas as memórias sendo repassadas ao mesmo tempo
+      </p>
+      <p>
+        Essa é uma das grandes questões a serem resolvidas, como fazer as
+        máquinas pensarem através de conhecimento, de algo lembrado. Por
+        enquanto os seres humanos estão em vantagem nesse quesito, mas irônica
+        e justamente por que não sabemos como. Uma demonstração, leia essa
+        palavra: Chocolate.
+      </p>
+      <p>
+        Você não precisou de muito esforço para manter essa palavra com você
+        até agora, então provavelmente não precisa passá-la junto a outras
+        informações a cada segundo. Você simplesmente lembra do significado.
+        Como a palavra "chocolate" chegou ao seu pensamento de forma tão
+        eficiente?
+      </p>
+      <p>
+        Tenho algumas ideias a respeito, mas até agora se provaram
+        infrutíferas. Caso alguém tenha sucesso em criar um programa que se
+        lembre do que passou e pense usando isso em vez de instintos simples
+        de entrada e saída otimizadas, teremos muita coisa em jogo, porque com
+        certeza existirá uma Inteligência Artificial.
+      </p>
     </div>
-  </body>
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+
 </html>
